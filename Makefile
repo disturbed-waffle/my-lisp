@@ -3,8 +3,8 @@ LFLAGS = -ledit -lm
 
 all: jlisp
 
-jlisp: repl.c
-	gcc $(CFLAGS) -o $@ mpc.c repl.c $(LFLAGS)
+jlisp: jlisp.c
+	gcc -g $(CFLAGS) -o $@ mpc.c jlisp.c $(LFLAGS)
 
 run: jlisp 
 	./jlisp
