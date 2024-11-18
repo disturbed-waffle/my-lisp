@@ -1,10 +1,10 @@
-CFLAGS = -std=c99 -Wall
+CFLAGS = -std=c99 -g -Wall
 LFLAGS = -ledit -lm
 
 all: jlisp
 
-jlisp: jlisp.c
-	gcc -g $(CFLAGS) -o $@ mpc.c jlisp.c $(LFLAGS)
+jlisp: src/jlisp.c
+	gcc -g $(CFLAGS) -o $@ src/*.c $(LFLAGS)
 
 run: jlisp 
 	./jlisp
